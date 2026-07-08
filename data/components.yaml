@@ -1,0 +1,116 @@
+# Component records for walking compute.
+# Status values: known-good, candidate, baseline, avoid-for-now, research, unknown.
+
+components:
+  - id: xr-template
+    name: TODO XR glasses
+    category: xr_glasses
+    status: candidate
+    approximate_cost_usd: null
+    availability: unknown
+    links: []
+    required_integration_points:
+      - accepts display signal from target compute path
+      - readable text for terminal/editor/browser use
+      - viable fit or prescription path
+      - mechanically sane cable path
+    nice_to_haves:
+      - 3DoF screen anchoring
+      - 6DoF world/body anchoring
+      - dimming or electrochromic shade
+      - low social ambiguity
+    known_incompatibilities: []
+    tested_by: []
+    field_reports: []
+    notes: "Template entry. Replace with exact model."
+
+  - id: mobile-compute-template
+    name: TODO mobile compute
+    category: mobile_compute
+    status: candidate
+    approximate_cost_usd: null
+    availability: unknown
+    links: []
+    required_integration_points:
+      - runs intended OS or stack
+      - supports display output path
+      - accepts keyboard/input path
+      - can run while powered from battery or hub
+    nice_to_haves:
+      - postmarketOS support
+      - Mobile NixOS support
+      - repairable USB-C port
+      - reliable suspend/resume
+    known_incompatibilities: []
+    tested_by: []
+    field_reports: []
+    notes: "Template entry. Replace with exact model and OS."
+
+  - id: usb-c-hub-template
+    name: TODO USB-C hub
+    category: usb_c_hub
+    status: candidate
+    approximate_cost_usd: null
+    availability: unknown
+    links: []
+    required_integration_points:
+      - passes display signal
+      - accepts auxiliary power if required
+      - supports keyboard/input path if central hub
+      - survives unplug/replug
+      - avoids mechanical port strain
+    nice_to_haves:
+      - works with Android baseline
+      - works with Linux candidate
+      - clearly labeled ports
+      - cheap enough for spares
+    known_incompatibilities: []
+    tested_by: []
+    field_reports: []
+    notes: "Most failure-prone category. Record exact port topology."
+
+  - id: split-keyboard-template
+    name: TODO split keyboard
+    category: split_keyboard
+    status: candidate
+    approximate_cost_usd: null
+    availability: unknown
+    links: []
+    required_integration_points:
+      - usable at hip height
+      - mountable or suspendable
+      - reliable connection to compute device
+      - keymap supports text and pointer/window control
+    nice_to_haves:
+      - QMK or ZMK
+      - low-profile switches
+      - quick-release mounting
+      - integrated pointer option
+    known_incompatibilities: []
+    tested_by: []
+    field_reports: []
+    notes: "Template entry. Include keymap notes."
+
+  - id: projector-template
+    name: TODO projector
+    category: projector
+    status: candidate
+    approximate_cost_usd: null
+    availability: unknown
+    links: []
+    required_integration_points:
+      - accepts video from compute device or hub
+      - bright enough for intended indoor use
+      - sane power path
+      - safe aiming and mounting
+      - avoids surprise projection onto people or private surfaces
+    nice_to_haves:
+      - USB-C video input
+      - battery powered
+      - works while charging
+      - quiet fan
+      - quick blank-screen control
+    known_incompatibilities: []
+    tested_by: []
+    field_reports: []
+    notes: "Projectors support social casting and demos."
