@@ -1,0 +1,191 @@
+= Walkable Compute =
+
+'''Walkable compute''' is a Noisebridge working group / field-notes project for mobile, wearable, mostly low-desk computing rigs.
+
+The current focus is mundane computing while standing, pacing, or walking: text editing, terminal work, reading, note-taking, messaging, lightweight development, demos, and collaborative use.
+
+== Current status ==
+
+We are in the '''field-report phase''': documenting what people are trying, what fails, what seems promising, and what dependencies matter.
+
+This page is not yet an authoritative buyer’s guide. Treat it as a living compatibility guide.
+
+== Design goals ==
+
+* Use off-the-shelf parts where possible.
+* Prefer hardware that can run free or self-sovereign software stacks.
+* Keep each component substitutable: display, compute, hub, keyboard, battery, cables, mounting, and optional projection should be separately testable.
+* Optimize for actual daily use: comfort, robustness, repairability, battery life, and social legibility.
+* Record failures. Especially record failures. USB-C is a crime scene with marketing copy.
+
+== Core rig shape ==
+
+A typical experimental rig has:
+
+# XR glasses or wearable display, mostly used as a plain display.
+# Mobile compute, ideally a phone or pocket device running Linux, postmarketOS, Mobile NixOS, NixOS-derived setups, or another self-sovereign stack.
+# A USB-C hub or adapter that can pass display signal, power, and input correctly.
+# Split keyboard halves mounted near the hips, hanging from a belt, attached to clothing, or otherwise reachable while arms hang naturally.
+# Battery pack and video-capable cables.
+# Mechanical strain relief so expensive parts are not being supported by tiny USB-C ports.
+# Optional projector or shared display path for socially casting a screen to nearby collaborators.
+
+== Dependency chain ==
+
+The most important compatibility chain is:
+
+ compute device → USB-C / DP Alt Mode → hub or adapter → XR glasses
+ battery / charger → USB-C PD input → hub → compute and/or glasses
+ keyboard → Bluetooth or USB → compute
+ compute device / hub → projector → nearby shared surface
+
+A rig is only “known-good” when the whole chain works together.
+
+A device having USB-C does '''not''' imply that it supports display output. A cable being USB-C does '''not''' imply that it carries video. A hub having many ports does '''not''' imply that it can pass display while also accepting auxiliary power and input.
+
+== Buyer guide categories ==
+
+=== XR glasses / wearable displays ===
+
+{| class="wikitable"
+! Device family !! Status !! Notes
+|-
+| XREAL-style display glasses || Candidate || Test text readability, DP requirements, fit/IPD, prescription path, social ambiguity, and whether 3DoF helps.
+|-
+| VITURE-style display glasses || Candidate || Test adapter behavior, app dependency, Linux compatibility, and productivity use.
+|-
+| Rokid / similar display glasses || Candidate || Needs field reports. Watch for app dependency and whether Linux display-only use is clean.
+|-
+| Older HDMI monocular displays || Historical / maybe useful || Lower FOV, sometimes socially clearer; useful comparison baseline.
+|}
+
+=== Mobile compute ===
+
+{| class="wikitable"
+! Device !! Status !! Notes
+|-
+| Android phone with display output || Practical baseline || Less sovereign, often better hardware. Useful as a known-good display/hub test source.
+|-
+| PinePhone / PinePhone Pro || Candidate || Good freedom story; verify performance, display behavior, and daily usability.
+|-
+| OnePlus 6 / 6T mobile Linux ports || Candidate || Interesting Mobile NixOS / postmarketOS target. Needs current field reports.
+|-
+| Steam Deck / handheld PC || Baseline / heavy || Useful for testing glasses, hubs, keyboards, and power paths.
+|}
+
+=== USB-C hubs / adapters ===
+
+{| class="wikitable"
+! Adapter class !! Status !! Notes
+|-
+| First-party XR charging adapters || Candidate || Often best chance for glasses + charging. May not expose keyboard/data. Test exact behavior.
+|-
+| Gaming handheld XR hubs || Candidate || Often designed for Steam Deck / ROG Ally / Switch-like power/display use. Test Linux phone behavior separately.
+|-
+| Generic USB4 / Thunderbolt hubs || Candidate || Potentially powerful, often bulky or power-hungry. Many do not expose the exact topology needed.
+|-
+| HDMI-only hubs || Usually not enough || May work only if the glasses can accept HDMI through an active adapter path.
+|-
+| DisplayLink docks || Avoid for core path || Software-driven USB graphics is separate from native DP Alt Mode. Maybe experiment, not default.
+|}
+
+=== Split keyboard / input ===
+
+{| class="wikitable"
+! Keyboard type !! Status !! Notes
+|-
+| Ergodox / open-hardware split keyboards || Candidate || Large but hackable; good precedent.
+|-
+| Corne / low-profile split keyboards || Candidate || Smaller, easier to mount; fewer keys means keymap discipline.
+|-
+| Choc-spaced custom halves || Candidate || Probably best long-term, more build work.
+|-
+| One-handed chorded input || Research || Interesting, but higher learning curve.
+|-
+| Touchpad / trackball add-on || Needed || Pointer input is adoption-critical.
+|}
+
+=== Projectors / socially cast displays ===
+
+{| class="wikitable"
+! Projector class !! Status !! Notes
+|-
+| Pocket projector || Candidate || Useful for demos and pairing. Test brightness, battery, fan noise, input, and focus.
+|-
+| Wearable chest/shoulder projector || Research || Could make screen socially visible; risks glare, aim instability, and weirdness.
+|-
+| Clip-on short-throw projector || Candidate || Interesting for wall/table projection. Mounting may be hard.
+|-
+| External shared screen || Baseline || Not walking-native, but useful for demos and debugging.
+|}
+
+== Required hardware report fields ==
+
+* Product name and exact model / revision.
+* Category.
+* Approximate cost.
+* Availability: in stock, backordered, used-only, discontinued, regional, unknown.
+* Purchase/source links.
+* Required integration points.
+* Nice-to-haves.
+* Known incompatibilities.
+* What was actually tested.
+* Who tested it and when.
+* Open questions.
+
+== Known-good rig table ==
+
+Add only rigs that someone has actually used.
+
+{| class="wikitable"
+! Rig name !! Tester !! Date !! Compute !! OS !! Display !! Hub !! Keyboard !! Battery !! Status !! Notes
+|-
+| Example: Android baseline || TODO || TODO || TODO || Android || TODO || TODO || TODO || TODO || Untested template || Establish a known-good display/hub/input baseline before debugging Linux.
+|}
+
+== Failed / weird tests ==
+
+This table is important. Do not delete failure reports just because they are embarrassing.
+
+{| class="wikitable"
+! Date !! Tester !! Component !! Failure mode !! Reproducible? !! Workaround !! Notes
+|-
+| TODO || TODO || USB-C hub || Glasses detected only without auxiliary power || TODO || TODO || TODO
+|-
+| TODO || TODO || Cable || Charges but no display || TODO || Replace with video-capable cable || TODO
+|}
+
+== Social norms ==
+
+Walkable compute creates attention ambiguity. The wearer owns that ambiguity.
+
+Default norms:
+
+* No surprise recording.
+* No surprise transcription.
+* If hardware has a camera, microphone, or outward-facing sensor, disclose it plainly.
+* If someone is not already opted into the experiment, assume they may interpret gaze-obscuring hardware as socially weird or surveillance-adjacent.
+* When starting a conversation with someone outside the group, prefer lifting, disabling, removing, or clearly explaining the display.
+* Do not make stealth the group’s social default. Stealth can be an ergonomic or aesthetic experiment; it should not be a consent hack.
+* Prefer visible status conventions: display up, display down, display off, or a badge/sticker saying “display only / no camera / no recording” when true.
+* Treat Noisebridge as a place to prototype openly, not to surprise-cyborg people.
+
+== Open questions ==
+
+* Which current XR glasses are best for boring text work?
+* Which mobile Linux devices can reliably output display?
+* Which hubs support video pass-through, auxiliary power, and input at the same time?
+* Can a hip-mounted keyboard become socially normal enough for daily use?
+* What is the least-weird attention/status protocol?
+* Can a small projector reduce social ambiguity by making the screen shareable?
+* How much of this should be standardized as a kit?
+* What is the first rig a new participant can try without spending too much money?
+
+== Repo ==
+
+https://github.com/mcint/walking-compute-field-guide
+
+[[Category:Projects]]
+[[Category:Hardware]]
+[[Category:Accessibility]]
+[[Category:Mobile Linux]]
