@@ -1,0 +1,106 @@
+name: Field report
+about: Report an actual test of hardware or a complete rig
+labels: [field-report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Field reports are the core artifact. Failures are useful. Weird partial successes are useful. Exact topology beats vibes.
+  - type: input
+    id: title
+    attributes:
+      label: Report title
+      placeholder: "Example: Android phone + XREAL-style glasses + XR hub bench test"
+    validations:
+      required: true
+  - type: input
+    id: tester
+    attributes:
+      label: Tester
+      placeholder: "Name / handle"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date tested
+      placeholder: "YYYY-MM-DD"
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - passes-baseline
+        - partial
+        - failed
+        - inconclusive
+        - do-not-buy-for-this
+    validations:
+      required: true
+  - type: textarea
+    id: components
+    attributes:
+      label: Components
+      description: Exact model names and revisions when possible.
+      placeholder: |
+        - Compute:
+        - OS:
+        - Display/glasses/projector:
+        - Hub/adapter:
+        - Keyboard/input:
+        - Battery/charger:
+        - Cables:
+        - Mounting:
+    validations:
+      required: true
+  - type: textarea
+    id: topology
+    attributes:
+      label: Exact topology
+      description: Describe what plugs into what. Include power and input path.
+      placeholder: "Phone -> hub -> glasses; battery -> hub PD input; keyboard -> Bluetooth -> phone"
+    validations:
+      required: true
+  - type: checkboxes
+    id: tests_run
+    attributes:
+      label: Tests run
+      options:
+        - label: Bench test
+        - label: Power test
+        - label: Wear test
+        - label: Social test
+        - label: Projector/shared-display test
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: power
+    attributes:
+      label: Power / battery behavior
+      placeholder: "Charged, held level, drained slowly, dropped connection, got hot, etc."
+  - type: textarea
+    id: ergonomics
+    attributes:
+      label: Ergonomics / wear notes
+      placeholder: "Comfort, visual fatigue, cable snags, mounting, sit/stand behavior."
+  - type: textarea
+    id: social
+    attributes:
+      label: Social interaction notes
+      placeholder: "Availability, gaze ambiguity, whether people thought it was recording, status signals."
+  - type: textarea
+    id: cost_availability
+    attributes:
+      label: Cost and availability
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation / next test
