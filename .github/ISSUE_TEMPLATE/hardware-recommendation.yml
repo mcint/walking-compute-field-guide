@@ -1,0 +1,93 @@
+name: Hardware recommendation
+about: Recommend or propose hardware for testing
+labels: [hardware, candidate]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for hardware that seems worth testing or recommending. Prefer exact model numbers and boring integration details.
+  - type: input
+    id: product
+    attributes:
+      label: Product name and exact model
+      placeholder: "Example: TODO XR glasses model / hub model / keyboard revision"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - XR glasses / wearable display
+        - Mobile compute
+        - USB-C hub / adapter
+        - Split keyboard / input
+        - Battery / power
+        - Cable / mounting
+        - Projector / socially cast display
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: cost
+    attributes:
+      label: Approximate cost
+      placeholder: "$80 used, $299 new, unknown, etc."
+  - type: input
+    id: availability
+    attributes:
+      label: Availability
+      placeholder: "In stock, backordered, used-only, discontinued, regional, unknown"
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Product pages, source links, manuals, compatibility docs, prior reviews.
+  - type: textarea
+    id: required_integration_points
+    attributes:
+      label: Required integration points
+      description: What must this work with? Display output, power, input, OS support, mounting, etc.
+      placeholder: |
+        - USB-C DisplayPort Alt Mode pass-through
+        - Auxiliary power while display is active
+        - Keyboard/input path
+        - Works from Android baseline or Linux candidate
+    validations:
+      required: true
+  - type: textarea
+    id: nice_to_haves
+    attributes:
+      label: Nice-to-haves
+      placeholder: |
+        - 3DoF
+        - Works while charging
+        - Quiet fan
+        - Quick-release mount
+        - Cheap enough for spares
+  - type: textarea
+    id: known_risks
+    attributes:
+      label: Known risks / incompatibilities
+      placeholder: "USB-C topology ambiguity, vendor app dependency, unavailable, mechanical fragility, etc."
+  - type: dropdown
+    id: tested
+    attributes:
+      label: Has anyone tested this exact model?
+      options:
+        - "No"
+        - "Yes, lightly"
+        - "Yes, as part of a rig"
+        - "Unknown"
+    validations:
+      required: true
+  - type: textarea
+    id: test_notes
+    attributes:
+      label: Test notes or planned test
+      description: Say what was connected to what, or what should be tested next.
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      placeholder: "candidate / known-good / baseline / avoid-for-now / research, and why"
