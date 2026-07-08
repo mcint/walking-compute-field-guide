@@ -1,0 +1,80 @@
+name: Integration problem
+about: Report a USB-C, power, display, input, mounting, or OS integration failure
+labels: [integration, bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for failures and weirdness. The boring details are the point.
+  - type: dropdown
+    id: integration_area
+    attributes:
+      label: Integration area
+      options:
+        - Display / DP Alt Mode / HDMI
+        - USB-C hub topology
+        - Power / USB-C PD
+        - Keyboard / input
+        - OS / drivers
+        - Mounting / strain relief
+        - Projector / shared display
+        - Social / norms boundary
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: components
+    attributes:
+      label: Components involved
+      placeholder: |
+        - Compute:
+        - OS:
+        - Hub/adapter:
+        - Display/glasses/projector:
+        - Battery/charger:
+        - Cable(s):
+        - Input:
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Is it reproducible?
+      options:
+        - "Yes"
+        - "No"
+        - "Intermittent"
+        - "Unknown"
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+  - type: textarea
+    id: logs_photos
+    attributes:
+      label: Logs, photos, diagrams, or links
+  - type: textarea
+    id: verdict
+    attributes:
+      label: Verdict
+      placeholder: "avoid-for-now, partial, candidate with caveat, needs retest, etc."
