@@ -1,0 +1,99 @@
+# Rig records for assembled walking compute systems.
+# Status values: untested-template, passes-baseline, partial, failed, inconclusive, do-not-buy-for-this.
+
+rigs:
+  - id: android-baseline-template
+    name: Android baseline
+    status: untested-template
+    tester: TODO
+    date: null
+    location: Noisebridge
+    purpose: "Establish a known-good display/hub/input baseline before debugging Linux."
+    components:
+      compute: TODO
+      os: Android
+      display: TODO
+      hub: TODO
+      keyboard: TODO
+      pointer: TODO
+      battery: TODO
+      cables: []
+      mounting: TODO
+    topology: "TODO: describe what plugs into what."
+    tests:
+      bench: false
+      power: false
+      wear: false
+      social: false
+    required_integration_points_met: []
+    missing_or_failed_integration_points: []
+    nice_to_haves_observed: []
+    cost:
+      total_usd: null
+      notes: TODO
+    recommendation: TODO
+    notes: TODO
+
+  - id: linux-phone-template
+    name: Linux phone candidate
+    status: untested-template
+    tester: TODO
+    date: null
+    location: Noisebridge
+    purpose: "Test self-sovereign mobile compute path."
+    components:
+      compute: TODO
+      os: TODO
+      display: TODO
+      hub: TODO
+      keyboard: TODO
+      pointer: TODO
+      battery: TODO
+      cables: []
+      mounting: TODO
+    topology: "TODO: describe what plugs into what."
+    tests:
+      bench: false
+      power: false
+      wear: false
+      social: false
+    required_integration_points_met: []
+    missing_or_failed_integration_points: []
+    nice_to_haves_observed: []
+    cost:
+      total_usd: null
+      notes: TODO
+    recommendation: TODO
+    notes: TODO
+
+  - id: projector-social-cast-template
+    name: Projector social-cast rig
+    status: untested-template
+    tester: TODO
+    date: null
+    location: Noisebridge
+    purpose: "Test socially visible display / shared screen from a walking compute rig."
+    components:
+      compute: TODO
+      os: TODO
+      projector: TODO
+      hub: TODO
+      keyboard: TODO
+      pointer: TODO
+      battery: TODO
+      cables: []
+      mounting: TODO
+    topology: "TODO: describe video, power, and mounting path."
+    tests:
+      bench: false
+      power: false
+      wear: false
+      social: false
+    required_integration_points_met: []
+    missing_or_failed_integration_points: []
+    nice_to_haves_observed: []
+    cost:
+      total_usd: null
+      notes: TODO
+    recommendation: TODO
+    notes: TODO
